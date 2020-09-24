@@ -52,7 +52,7 @@ REGEX_HACKATHON_ORGANIZER_EMAIL = '^.*@oxfordhack\.co\.uk$'
 HACKATHON_DEV_EMAILS = ['ilmansonic@gmail.com']
 
 # Reimbursement configuration
-REIMBURSEMENT_ENABLED = False
+REIMBURSEMENT_ENABLED = True
 CURRENCY = '$'
 REIMBURSEMENT_EXPIRY_DAYS = 5
 REIMBURSEMENT_REQUIREMENTS = 'You have to submit a project and demo it during the event in order to be reimbursed.'
