@@ -3,14 +3,13 @@ import os
 
 from django.utils import timezone
 
-HACKATHON_NAME = 'HackAssistant'
+HACKATHON_NAME = 'OxfordHack 2020'
 # What's the name for the application
-HACKATHON_APPLICATION_NAME = 'HackAssistant registration'
+HACKATHON_APPLICATION_NAME = 'OxfordHack registration'
 # Hackathon timezone
-TIME_ZONE = 'MST'
+TIME_ZONE = 'Europe/London'
 # This description will be used on the html and sharing meta tags
-HACKATHON_DESCRIPTION = 'HackAssistant is an organization to mantain ' \
-                        'a few open-source projects related with hackathon management'
+HACKATHON_DESCRIPTION = 'OxfordHack 2020 do be kinda online doe'
 # Domain where application is deployed, can be set by env variable
 HACKATHON_DOMAIN = os.environ.get('DOMAIN', None)
 HEROKU_APP_NAME = os.environ.get('HEROKU_APP_NAME', None)
@@ -19,7 +18,7 @@ if HEROKU_APP_NAME and not HACKATHON_DOMAIN:
 elif not HACKATHON_DOMAIN:
     HACKATHON_DOMAIN = 'localhost:8000'
 # Hackathon contact email: where should all hackers contact you. It will also be used as a sender for all emails
-HACKATHON_CONTACT_EMAIL = 'contact@gerard.space'
+HACKATHON_CONTACT_EMAIL = 'committee@oxfordhack.co.uk'
 # Hackathon logo url, will be used on all emails
 HACKATHON_LOGO_URL = 'https://avatars2.githubusercontent.com/u/33712329?s=200&v=4'
 
@@ -47,13 +46,13 @@ HACKATHON_LEAVE = 'Closing ceremony will be held on Sunday October 15th from 3:0
 # HACKATHON_LIVE_PAGE = 'https://gerard.space/live'
 
 # (OPTIONAL) Regex to automatically match organizers emails and set them as organizers when signing up
-REGEX_HACKATHON_ORGANIZER_EMAIL = '^.*@gerard\.space$'
+REGEX_HACKATHON_ORGANIZER_EMAIL = '^.*@oxfordhack\.co\.uk$'
 
 # (OPTIONAL) Sends 500 errors to email whilst in production mode.
-HACKATHON_DEV_EMAILS = []
+HACKATHON_DEV_EMAILS = ['ilmansonic@gmail.com']
 
 # Reimbursement configuration
-REIMBURSEMENT_ENABLED = True
+REIMBURSEMENT_ENABLED = False
 CURRENCY = '$'
 REIMBURSEMENT_EXPIRY_DAYS = 5
 REIMBURSEMENT_REQUIREMENTS = 'You have to submit a project and demo it during the event in order to be reimbursed.'
@@ -76,7 +75,7 @@ SLACK = {
 
 # (OPTIONAL) Logged in cookie
 # This allows to store an extra cookie in the browser to be shared with other application on the same domain
-LOGGED_IN_COOKIE_DOMAIN = '.gerard.space'
+LOGGED_IN_COOKIE_DOMAIN = '.oxfordhack.co.uk'
 LOGGED_IN_COOKIE_KEY = 'hackassistant_logged_in'
 
 # Hardware configuration
