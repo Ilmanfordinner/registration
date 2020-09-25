@@ -4,7 +4,7 @@ from django.forms import ModelForm
 from django.template.defaultfilters import filesizeformat
 from form_utils.forms import BetterModelForm
 
-from reimbursement.models import Reimbursement, check_friend_emails
+# from reimbursement.models import Reimbursement, check_friend_emails
 
 
 class ReceiptSubmissionReceipt(BetterModelForm):

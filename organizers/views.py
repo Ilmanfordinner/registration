@@ -22,7 +22,7 @@ from organizers.tables import ApplicationsListTable, ApplicationFilter, AdminApp
     AdminTeamListTable, InviteFilter, DubiousListTable, DubiousApplicationFilter, VolunteerFilter, \
     VolunteerListTable, MentorListTable, MentorFilter, SponsorListTable, SponsorFilter, SponsorUserListTable, \
     SponsorUserFilter, BlacklistListTable, BlacklistApplicationFilter
-from reimbursement.models import Reimbursement, RE_PEND_APPROVAL
+# from reimbursement.models import Reimbursement, RE_PEND_APPROVAL
 from teams.models import Team
 from user.mixins import IsOrganizerMixin, IsDirectorMixin, HaveDubiousPermissionMixin, HaveVolunteerPermissionMixin, \
     HaveSponsorPermissionMixin, HaveMentorPermissionMixin, IsBlacklistAdminMixin
