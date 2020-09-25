@@ -12,7 +12,7 @@ from django.views.generic import TemplateView
 
 from app import utils, mixins
 from applications.models import HackerApplication, MentorApplication
-from reimbursement.models import Reimbursement
+# from reimbursement.models import Reimbursement
 
 
 def root_view(request):
