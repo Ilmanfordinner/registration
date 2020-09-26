@@ -1,8 +1,9 @@
 body {
-    background: #2B546B; /*linear-gradient(#020913 0%, #00121E 19%, #001F3A 28%, #063651 56%, #2B546B 71%, #827C6C 100%) no-repeat center center fixed;*/
+    background: linear-gradient(#211232,#3f2262); /*linear-gradient(#020913 0%, #00121E 19%, #001F3A 28%, #063651 56%, #2B546B 71%, #827C6C 100%) no-repeat center center fixed;*/
     background-size: cover;
     font-family: 'Roboto', Helvetica, sans-serif;
     font-size: 15px;
+    color: whitesmoke;
 }
 
 html {
@@ -23,7 +24,8 @@ body {
     width: 100%;
     /* Set the fixed height of the footer here */
     height: 105px;
-    background-color: #f8f8f8;
+    /* background-color: #f8f8f8; */
+    background: linear-gradient(transparent, #030305);;
     border-color: #e7e7e7;
 
     -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
@@ -66,12 +68,12 @@ body {
 /*}*/
 
 footer p, footer small {
-    color: #777;
+    color: white;
     opacity: 0.5;
 }
 
 footer p > a {
-    color: #4b4b4b;
+    color: whitesmoke;
     opacity: 1;
 }
 
@@ -81,7 +83,7 @@ footer .row {
 
 footer a, footer a:focus, footer a:active {
     opacity: 0.5;
-    color: #777;
+    color: white;
     -webkit-transition: all .1s linear;
     -moz-transition: all .1s linear;
     -o-transition: all .1s linear;
@@ -90,7 +92,7 @@ footer a, footer a:focus, footer a:active {
 
 footer a:hover {
     opacity: 0.9;
-    color: #4b4b4b;
+    color: whitesmoke;
 }
 
 .social-icons > a {
@@ -107,7 +109,22 @@ nav.navbar {
     -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
     -moz-box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
+    background: #030305;
+    color: white;
 }
+
+.navbar-default a {
+    color: whitesmoke !important;
+}
+
+.navbar-default a:hover {
+    color: gray !important;
+}
+
+.active a {
+    background-color: #f3b24f !important;
+}
+
 
 div.panel {
     -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
@@ -118,6 +135,9 @@ div.panel {
     border-radius: 0;
     border: 0;
     z-index: 3;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 10px;
+    border-radius: 30px;
 }
 
 .confirm-content {
@@ -150,6 +170,20 @@ img.icon {
     margin-top: 5px;
 }
 
+.btn-primary {
+    background-color: #f3b24f;
+}
+
+.btn-primary:hover {
+    filter: brightness(90%);
+    background-color: #f3b24f;
+}
+
+.btn-primary:active, .btn-primary:target, .btn-primary:focus .btn-primary:active:focus {
+    filter: brightness(80%) !important;
+    background-color: #f3b24f !important;
+}
+
 .col-centered {
     width: 380px;
     position: absolute;
@@ -166,7 +200,7 @@ img.icon {
 }
 
 .orderable > a {
-    color: #333;
+    color: whitesmoke;
     text-decoration: none;
 
 }
@@ -217,6 +251,11 @@ img.icon {
 img {
     margin: 0 auto;
     padding: 15px;
+}
+
+img.logo {
+    padding: 0;
+    margin-left: 15px;
 }
 
 @media (max-width: 768px) {
@@ -311,4 +350,35 @@ img {
     .collapse.in{
         display:block !important;
     }
+}
+
+.c3 {
+    background-color: #4F5E63;
+}
+.c3 .c3-axis-x path,
+.c3 .c3-axis-x line,
+.c3 .c3-axis-y path,
+.c3 .c3-axis-y line {
+    stroke: white;
+}
+
+.c3 .c3-axis-x g,
+.c3 .c3-axis-y g,
+.c3 .c3-legend-item-data text,
+.c3 .c3-axis-y-label,
+.c3 .c3-axis-x-label,
+.c3 .c3-legend-item {
+    fill: whitesmoke;
+}
+
+/*when displaying the data on the chart */
+.c3 text.c3-text { 
+    fill: whitesmoke!important;
+    stroke: whitesmoke!important;
+    stroke-opacity: 0.3!important;
+}
+
+/* for the tooltip text color */
+.c3 .c3-tooltip-container {
+    color:darkgrey;
 }

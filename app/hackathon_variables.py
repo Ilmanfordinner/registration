@@ -3,9 +3,9 @@ import os
 
 from django.utils import timezone
 
-HACKATHON_NAME = 'OxfordHack 2020'
+HACKATHON_NAME = 'Oxford Hack 2020'
 # What's the name for the application
-HACKATHON_APPLICATION_NAME = 'OxfordHack registration'
+HACKATHON_APPLICATION_NAME = 'Oxford Hack Registration'
 # Hackathon timezone
 TIME_ZONE = 'Europe/London'
 # This description will be used on the html and sharing meta tags
