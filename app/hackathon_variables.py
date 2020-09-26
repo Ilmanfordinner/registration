@@ -9,7 +9,7 @@ HACKATHON_APPLICATION_NAME = 'Oxford Hack Registration'
 # Hackathon timezone
 TIME_ZONE = 'Europe/London'
 # This description will be used on the html and sharing meta tags
-HACKATHON_DESCRIPTION = 'OxfordHack 2020 do be kinda online doe'
+HACKATHON_DESCRIPTION = 'Oxford Hack is the official Oxford student Hackathon, where over 300 people gather every year to collaborate, innovate, learn and experiment while creating a project from scratch in 24 hours.'
 # Domain where application is deployed, can be set by env variable
 HACKATHON_DOMAIN = os.environ.get('DOMAIN', None)
 HEROKU_APP_NAME = os.environ.get('HEROKU_APP_NAME', None)
