@@ -170,20 +170,6 @@ img.icon {
     margin-top: 5px;
 }
 
-.btn-primary {
-    background-color: #f3b24f;
-}
-
-.btn-primary:hover {
-    filter: brightness(90%);
-    background-color: #f3b24f;
-}
-
-.btn-primary:active, .btn-primary:target, .btn-primary:focus .btn-primary:active:focus {
-    filter: brightness(80%) !important;
-    background-color: #f3b24f !important;
-}
-
 .col-centered {
     width: 380px;
     position: absolute;
