@@ -14,6 +14,10 @@ a.list-group-item {
     margin: 0;
 }
 
+.panel-footer {
+    background-color: transparent !important;
+}
+
 .border-less {
     border: 0;
 }

@@ -113,6 +113,10 @@ nav.navbar {
     color: white;
 }
 
+.navbar-default {
+    border-color: transparent !important;
+}
+
 .navbar-default a {
     color: whitesmoke !important;
 }
@@ -139,6 +143,8 @@ div.panel {
     padding: 10px;
     border-radius: 30px;
 }
+
+
 
 .confirm-content {
     margin-top: 70px

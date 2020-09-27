@@ -91,7 +91,7 @@ DUBIOUS_ENABLED = False
 # Enable blacklist separate pipeline (disabled by default)
 BLACKLIST_ENABLED = False
 
-SUPPORTED_RESUME_EXTENSIONS = []
+SUPPORTED_RESUME_EXTENSIONS = [".pdf"]
 
 # Mentor/Volunteer applications can expire if they are invited, set to False to not
 MENTOR_EXPIRES = False

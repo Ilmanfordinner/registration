@@ -189,9 +189,12 @@ MEDIA_ROOT = 'files'
 MEDIA_URL = '/files/'
 
 if os.environ.get('DROPBOX_OAUTH2_TOKEN', False):
+    print("Using Dropbox!")
     DEFAULT_FILE_STORAGE = 'storages.backends.dropbox.DropBoxStorage'
     DROPBOX_OAUTH2_TOKEN = os.environ.get('DROPBOX_OAUTH2_TOKEN', False)
     DROPBOX_ROOT_PATH = HACKATHON_DOMAIN.replace('.', '_')
+else:
+    print("Not using Dropbox!")
 
 # Sendgrid API key
 SENDGRID_API_KEY = os.environ.get('SG_KEY', None)

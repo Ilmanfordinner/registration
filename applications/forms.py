@@ -195,23 +195,23 @@ class HackerApplicationForm(_BaseApplicationForm, _HackerMentorApplicationForm, 
         deadline = getattr(settings, 'REIMBURSEMENT_DEADLINE', False)
         r_enabled = getattr(settings, 'REIMBURSEMENT_ENABLED', False)
         if r_enabled and deadline and deadline <= timezone.now() and not self.instance.pk:
-            self._fieldsets.append(('Traveling',
+            self._fieldsets.append(('Location',
                                     {'fields': ('origin',),
                                      'description': 'Reimbursement applications are now closed. '
                                                     'Sorry for the inconvenience.',
                                      }))
         elif self.instance.pk and r_enabled:
-            self._fieldsets.append(('Traveling',
+            self._fieldsets.append(('Location',
                                     {'fields': ('origin',),
                                      'description': 'If you applied for reimbursement, check out the Travel tab. '
                                                     'Email us at %s for any change needed on reimbursements.' %
                                                     settings.HACKATHON_CONTACT_EMAIL,
                                      }))
         elif not r_enabled:
-            self._fieldsets.append(('Traveling',
+            self._fieldsets.append(('Location',
                                     {'fields': ('origin',)}), )
         else:
-            self._fieldsets.append(('Traveling',
+            self._fieldsets.append(('Location',
                                     {'fields': ('origin', 'reimb', 'reimb_amount'), }), )
 
         # Fields that we only need the first time the hacker fills the application
