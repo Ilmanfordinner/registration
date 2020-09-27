@@ -35,7 +35,7 @@ class _BaseApplicationForm(OverwriteOnlyModelFormMixin, BetterModelForm):
         choices=((False, '18 or over'), (True, 'Under 18')),
         widget=forms.RadioSelect
     )
-    code_conduct = forms.BooleanField(required=False,
+    code_conduct = forms.BooleanField(required=True,
                                       label='I have read and accept the '
                                             '<a href="%s" target="_blank">%s Code of Conduct</a>' % (
                                                 getattr(settings, 'CODE_CONDUCT_LINK', '/code_conduct'),
@@ -491,9 +491,7 @@ class SponsorForm(OverwriteOnlyModelFormMixin, BetterModelForm):
         attrs={'class': 'form-control', 'placeholder': '+#########'}))
     code_conduct = forms.BooleanField(required=False,
                                       label='I have read and accept the '
-                                            '<a href="%s" target="_blank">%s Code of Conduct</a>' % (
-                                                getattr(settings, 'CODE_CONDUCT_LINK', '/code_conduct'),
-                                                settings.HACKATHON_NAME), )
+                                            '<a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank">MLH Code of Conduct</a>')
 
     def clean_code_conduct(self):
         cc = self.cleaned_data.get('code_conduct', False)
