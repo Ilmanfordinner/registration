@@ -233,13 +233,13 @@ def callback(request, provider=None):
         # Save extra info
         draft = a_models.DraftApplication()
         draft.user = user
-        mlhdiet = mlhuser.get('dietary_restrictions', '')
-        diet = mlhdiet if mlhdiet in dict(a_models.DIETS).keys() else 'Others'
+        mlhdiet = "None"
+        diet = 'Others'
         draft.save_dict({
             'degree': mlhuser.get('major', ''),
             'university': mlhuser.get('school', {}).get('name', ''),
             'phone_number': mlhuser.get('phone_number', ''),
-            'tshirt_size': [k for k, v in a_models.TSHIRT_SIZES if v == mlhuser.get('shirt_size', '')][0],
+            'tshirt_size': 'M',
             'diet': mlhdiet,
             'other_diet': mlhdiet if diet == 'Others' else '',
         })
