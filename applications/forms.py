@@ -226,8 +226,7 @@ class HackerApplicationForm(_BaseApplicationForm, _HackerMentorApplicationForm, 
 
         help_texts = {
             'gender': 'This is for demographic purposes.',
-            'graduation_year': 'What year have you graduated on or when will '
-                               'you graduate',
+            'graduation_year': 'When will you graduate?',
             'degree': 'What\'s your major/degree?',
             'other_diet': 'Please fill here in your dietary requirements. We want to make sure we have food for you!',
             'lennyface': 'tip: you can chose from here <a href="http://textsmili.es/" target="_blank">'
@@ -327,8 +326,7 @@ class VolunteerApplicationForm(_BaseApplicationForm, _HackerMentorVolunteerAppli
         model = models.VolunteerApplication
         help_texts = {
             'gender': 'This is for demographic purposes.',
-            'graduation_year': 'What year have you graduated on or when will '
-                               'you graduate',
+            'graduation_year': 'When will you graduate?',
             'degree': 'What\'s your major/degree?',
             'other_diet': 'Please fill here in your dietary requirements. We want to make sure we have food for you!',
             'lennyface': 'tip: you can chose from here <a href="http://textsmili.es/" target="_blank">'
@@ -449,8 +447,7 @@ class MentorApplicationForm(_BaseApplicationForm, _HackerMentorApplicationForm, 
 
         help_texts = {
             'gender': 'This is for demographic purposes.',
-            'graduation_year': 'What year have you graduated on or when will '
-                               'you graduate',
+            'graduation_year': 'When will you graduate?',
             'degree': 'What\'s your major/degree?',
             'other_diet': 'Please fill here in your dietary requirements. We want to make sure we have food for you!',
             'lennyface': 'tip: you can chose from here <a href="http://textsmili.es/" target="_blank">'
