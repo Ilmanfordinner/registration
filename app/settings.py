@@ -250,8 +250,8 @@ OAUTH_PROVIDERS = {
         'token_url': 'https://my.mlh.io/oauth/token',
         'id': os.environ.get('MLH_CLIENT_SECRET', '').split('@')[0],
         'secret': os.environ.get('MLH_CLIENT_SECRET', '@').split('@')[1],
-        'scope': 'email+event+education+phone_number',
-        'user_url': 'https://my.mlh.io/api/v2/user.json'
+        'scope': 'email+event+education+phone_number+birthday',
+        'user_url': 'https://my.mlh.io/api/v3/user.json'
 
     }
 }
