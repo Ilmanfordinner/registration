@@ -32,7 +32,8 @@
                     {% include 'include/field.html' with desc='Travel reimbursement?' value=app.reimb|yesno:'Yes,No,Maybe' %}
                     {% include 'include/field.html' with desc='Money needed' value=app.reimb_amount %}
                 {% endif %}
-                {% include 'include/field.html' with desc='Under age (-18)' value=app.under_age|yesno:'Yes,No,Maybe' %}
+                <!--{% include 'include/field.html' with desc='Under age (-18)' value=app.under_age|yesno:'Yes,No,Maybe' %} -->
+                {% include 'include/field.html' with desc='Date of birth' value=app.date_of_birth|naturaltime %}
                 {% if app.resume %}
                     {% include 'include/field.html' with desc='Resume' value='<a href="'|add:app.resume.url|add:'" target="_blank">'|add:app.resume.name|add:"</a>"|safe %}
                 {% endif %}

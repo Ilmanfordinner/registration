@@ -1,0 +1,26 @@
+ - swap colours on signup page buttons - done
+ - potentially remove border colour of navbar - done
+ - schedule email design thingy
+ - Registration form graduation year - done
+ - do we have t-shirts? 
+ - Age restriction?
+ - "Why are you excited" should be required? - yes
+ - Resume format: PDF only - needs testing (partially tested)
+ - Change travelling to location in signup form - done
+ - Code of conduct: see https://hackcodeofconduct.org/ and https://static.mlh.io/docs/mlh-code-of-conduct.pdf
+ - Fix review panel colours - done
+ - do we get volunteers?
+ - do we get mentors?
+
+
+ - remove "what year you have graduated" - done
+ - hide t-shirts and dietary requirements - done
+ - add birthdates
+ - enforce 18+
+ - Add CV PDF privacy text
+ - pdf size constraint - done by default
+ - change code of conduct to MLH one - done (needs testing)
+ - slack later
+ - disable django debug mode
+ - test competition mode
+ - MLH broken - fixed
