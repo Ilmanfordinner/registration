@@ -2,7 +2,7 @@
 {% load static %}
 {% load form_utils %}
 <style>
-    #id_under_age > div, #id_tshirt_size > div, #id_graduation_year > div, #id_team > div, #id_first_timer > div,
+    #id_date_of_birth > div, #id_tshirt_size > div, #id_graduation_year > div, #id_team > div, #id_first_timer > div,
     #id_scholarship > div, #id_reimb > div, #id_first_time_volunteer > div, #id_which_hack > div, #id_attendance > div,
     #id_english_level > div, #id_first_time_mentor > div , #id_study_work > div {
         display: inline-block;
@@ -12,6 +12,10 @@
         font-weight: 400;
         vertical-align: middle;
         cursor: pointer;
+    }
+
+    .datepicker-panel > ul > li {
+        color: black;
     }
 
     .displaynone {
@@ -51,6 +55,10 @@
 
 <script src="{% static 'lib/typeahead.min.js' %}"></script>
 <script src="{% static 'js/form_modifiers.js' %}"></script>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datepicker/0.6.5/datepicker.min.js" integrity="sha256-/7FLTdzP6CfC1VBAj/rsp3Rinuuu9leMRGd354hvk0k=" crossorigin="anonymous"></script>
+
 
 <script>
 
@@ -118,6 +126,10 @@
             });
             // Making projects look like required
             projects.parent().addClass('required');
+
+            var date_of_birth = $('#id_date_of_birth');
+            date_of_birth.datepicker({format: 'dd/mm/yyyy', date: '01/01/2000', endDate: '10/08/2002'});
+            date_of_birth.value = "01/01/2000";
 
             var is_firsttime_volunteer = $('input[name="first_time_volunteer"][value="True"]');
             var experienced_volunteer = $('input[name="first_time_volunteer"][value="False"]');

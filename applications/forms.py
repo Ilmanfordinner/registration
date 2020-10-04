@@ -9,6 +9,7 @@ from app.utils import validate_url
 from applications import models
 
 import requests
+import datetime
 
 
 def set_field_html_name(cls, new_name):
@@ -27,6 +28,7 @@ def set_field_html_name(cls, new_name):
 class _BaseApplicationForm(OverwriteOnlyModelFormMixin, BetterModelForm):
     phone_number = forms.CharField(required=False, widget=forms.TextInput(
         attrs={'class': 'form-control', 'placeholder': '+#########'}))
+    '''
     under_age = forms.TypedChoiceField(
         required=True,
         label='How old are you?',
@@ -34,12 +36,16 @@ class _BaseApplicationForm(OverwriteOnlyModelFormMixin, BetterModelForm):
         coerce=lambda x: x == 'True',
         choices=((False, '18 or over'), (True, 'Under 18')),
         widget=forms.RadioSelect
+    )'''
+    date_of_birth = forms.DateField(
+        required=True,
+        label='What\'s your date of birth?',
+        initial='01/01/2000',
+        input_formats=['%d/%m/%Y', '%Y-%m-%d']
     )
-    code_conduct = forms.BooleanField(required=True,
-                                      label='I have read and accept the '
-                                            '<a href="%s" target="_blank">%s Code of Conduct</a>' % (
-                                                getattr(settings, 'CODE_CONDUCT_LINK', '/code_conduct'),
-                                                settings.HACKATHON_NAME), )
+    code_conduct = forms.BooleanField(required=False,
+                                      label='I am over 18 years old and have read and accept the '
+                                            '<a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank">MLH Code of Conduct</a>')
 
     def clean_code_conduct(self):
         cc = self.cleaned_data.get('code_conduct', False)
@@ -184,7 +190,7 @@ class HackerApplicationForm(_BaseApplicationForm, _HackerMentorApplicationForm, 
             ('Personal Info',
              {'fields': ('university', 'degree', 'graduation_year', 'gender', 'other_gender',
                          'phone_number', 'tshirt_size', 'diet', 'other_diet',
-                         'under_age', 'lennyface'),
+                         'date_of_birth', 'lennyface'),
               'description': 'Hey there, before we begin we would like to know a little more about you.', }),
             ('Hackathons?', {'fields': ('description', 'first_timer', 'projects'), }),
             ('Show us what you\'ve built',
@@ -234,7 +240,9 @@ class HackerApplicationForm(_BaseApplicationForm, _HackerMentorApplicationForm, 
             'projects': 'You can talk about about past hackathons, personal projects, awards etc. '
                         '(we love links) Show us your passion! :D',
             'reimb_amount': 'We try our best to cover costs for all hackers, but our budget is limited',
-            'resume': 'Accepted file formats: %s' % (', '.join(extensions) if extensions else 'Any'),
+            'resume': 'Accepted file formats: %s (Max size 5MB). \n'
+                      'By attaching your CV, you agree to share it with some of our sponsors. Your information will not be used for any other purposes.'
+                       % (', '.join(extensions) if extensions else 'Any'),
             'origin': "Please select one of the dropdown options or write 'Others'"
         }
 
@@ -310,7 +318,7 @@ class VolunteerApplicationForm(_BaseApplicationForm, _HackerMentorVolunteerAppli
             ('Personal Info',
              {'fields': ('origin', 'university', 'degree', 'graduation_year', 'gender', 'other_gender',
                          'phone_number', 'tshirt_size', 'diet', 'other_diet',
-                         'under_age', 'lennyface'),
+                         'date_of_birth', 'lennyface'),
               'description': 'Hey there, before we begin we would like to know a little more about you.', }),
             ('Volunteer Skills', {'fields': ('first_timer', 'first_time_volunteer', 'which_hack', 'attendance',
                                              'english_level', 'quality', 'weakness', 'cool_skill', 'fav_movie',
@@ -490,7 +498,7 @@ class SponsorForm(OverwriteOnlyModelFormMixin, BetterModelForm):
     phone_number = forms.CharField(required=False, widget=forms.TextInput(
         attrs={'class': 'form-control', 'placeholder': '+#########'}))
     code_conduct = forms.BooleanField(required=False,
-                                      label='I have read and accept the '
+                                      label='I am over 18 years old and have read and accept the '
                                             '<a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank">MLH Code of Conduct</a>')
 
     def clean_code_conduct(self):
