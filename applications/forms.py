@@ -41,7 +41,7 @@ class _BaseApplicationForm(OverwriteOnlyModelFormMixin, BetterModelForm):
         required=True,
         label='What\'s your date of birth?',
         initial='01/01/2000',
-        input_formats=['%d/%m/%Y']
+        input_formats=['%d/%m/%Y', '%Y-%m-%d']
     )
     code_conduct = forms.BooleanField(required=False,
                                       label='I am over 18 years old and have read and accept the '
