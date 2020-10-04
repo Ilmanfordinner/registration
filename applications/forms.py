@@ -43,7 +43,7 @@ class _BaseApplicationForm(OverwriteOnlyModelFormMixin, BetterModelForm):
         initial='01/01/2000',
         input_formats=['%d/%m/%Y']
     )
-    code_conduct = forms.BooleanField(required=True,
+    code_conduct = forms.BooleanField(required=False,
                                       label='I am over 18 years old and have read and accept the '
                                             '<a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank">MLH Code of Conduct</a>')
 
