@@ -24,7 +24,7 @@ def clean_draft_application(sender, instance, created, *args, **kwargs):
 @receiver(post_delete, sender=models.VolunteerApplication)
 def create_draft_application(sender, instance, *args, **kwargs):
     dict = model_to_dict(instance)
-    for key in ['user', 'invited_by', 'submission_date', 'status_update_date', 'status', 'resume']:
+    for key in ['user', 'invited_by', 'submission_date', 'status_update_date', 'status', 'resume', 'date_of_birth']:
         dict.pop(key, None)
     d = models.DraftApplication()
     d.user = instance.user
