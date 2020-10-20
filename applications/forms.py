@@ -44,8 +44,7 @@ class _BaseApplicationForm(OverwriteOnlyModelFormMixin, BetterModelForm):
         input_formats=['%d/%m/%Y', '%Y-%m-%d']
     )
     code_conduct = forms.BooleanField(required=False,
-                                      label='I am over 18 years old and have read and accept the '
-                                            '<a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank">MLH Code of Conduct</a>')
+                                      label='I authorize you to share my application/registration information for event administration, ranking, MLH administration, pre- and post-event informational e-mails, and occasional messages about hackathons in-line with the <a href="https://mlh.io/privacy">MLH Privacy Policy</a>. I further agree to the terms of both the <a href="https://github.com/MLH/mlh-policies/tree/master/prize-terms-and-conditions">MLH Contest Terms and Conditions</a> and the <a href="https://mlh.io/privacy">MLH Privacy Policy</a>.')
 
     def clean_code_conduct(self):
         cc = self.cleaned_data.get('code_conduct', False)
@@ -77,7 +76,10 @@ class _BaseApplicationForm(OverwriteOnlyModelFormMixin, BetterModelForm):
             origin_verified = origin
         else:
             response = requests.get('https://api.teleport.org/api/cities/', params={'search': origin})
-            data = response.json()['_embedded']['city:search-results']
+            response_json = response.json()
+            if '_embedded' not in response_json:
+                raise forms.ValidationError("Travel API seems to be down! Please wait a few minutes or type in 'Others'")
+            data = response_json['_embedded']['city:search-results']
             if not data:
                 raise forms.ValidationError("Please select one of the dropdown options or write 'Others'")
             else:
@@ -498,8 +500,7 @@ class SponsorForm(OverwriteOnlyModelFormMixin, BetterModelForm):
     phone_number = forms.CharField(required=False, widget=forms.TextInput(
         attrs={'class': 'form-control', 'placeholder': '+#########'}))
     code_conduct = forms.BooleanField(required=False,
-                                      label='I am over 18 years old and have read and accept the '
-                                            '<a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank">MLH Code of Conduct</a>')
+                                      label='I authorize you to share my application/registration information for event administration, ranking, MLH administration, pre- and post-event informational e-mails, and occasional messages about hackathons in-line with the <a href="https://mlh.io/privacy">MLH Privacy Policy</a>. I further agree to the terms of both the <a href="https://github.com/MLH/mlh-policies/tree/master/prize-terms-and-conditions">MLH Contest Terms and Conditions</a> and the <a href="https://mlh.io/privacy">MLH Privacy Policy</a>.')
 
     def clean_code_conduct(self):
         cc = self.cleaned_data.get('code_conduct', False)
