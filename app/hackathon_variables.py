@@ -33,13 +33,14 @@ HACKATHON_FACEBOOK_PAGE = 'oxfordhack2020'
 # HACKATHON_GITHUB_REPO = 'https://github.com/Ilmanfordinner/registration'
 
 # (OPTIONAL) Applications deadline
-HACKATHON_APP_DEADLINE = timezone.datetime(2020, 11, 8, 6, 0, tzinfo=timezone.pytz.timezone(TIME_ZONE))
+HACKATHON_APP_DEADLINE = timezone.datetime(2020, 11, 8, 23, 59, tzinfo=timezone.pytz.timezone(TIME_ZONE))
 # (OPTIONAL) When to arrive at the hackathon
-# HACKATHON_ARRIVE = 'Registration opens at 6:00 PM on Monday October 5th!'
+HACKATHON_ARRIVE = 'The opening ceremony will be at <strong>9AM, Saturday 14th of November</strong>. <br>' \
+                   'We will provide a streaming link on the Slack group and via email.'
 
 # (OPTIONAL) When to arrive at the hackathon
-# HACKATHON_LEAVE = 'Closing ceremony will be held on Sunday October 15th from 3:00 PM to 5:00 PM. ' \
-#                   'However the projects demo fair will be held in the morning from 10:30 AM to 1 PM.'
+HACKATHON_LEAVE = 'The project submission deadline will be at <strong>9PM, Sunday 15th of November</strong>. <br>' \
+                  'That will be followed by judging on Monday morning and a closing ceremony livestream at 5PM.'
 
 # (OPTIONAL) Hackathon live page
 # HACKATHON_LIVE_PAGE = 'https://gerard.space/live'

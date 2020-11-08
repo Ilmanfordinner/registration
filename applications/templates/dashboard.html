@@ -58,29 +58,20 @@
                 {% endif %}
             </div>
         {% elif application.answered_invite %}
-
-            <div class="col-md-4">
-                <img class="img-responsive "
-                     src="http://chart.googleapis.com/chart?cht=qr&chs=350x350&chld=L|0&chl={{ application.uuid_str }}"/>
-            </div>
-            <div class="col-md-8">
+            <div class="col-md-12" style="text-align: center;">
                 <p>Thank you {{ user.get_full_name }} for confirming your attendance
-                    to {{ h_name }}! In order to make registration go smoother, please show us this QR code during the
-                    process so we can
-                    easily find
-                    you.</p>
+                    to {{ h_name }}! To participate, join us at our Slack channel via the link we've sent to your email.</p>
                 {% if h_arrive %}
-                    <h3>When to arrive</h3>
-                    <p>{{ h_arrive }}</p>
+                    <h3>Opening</h3>
+                    <p>{{ h_arrive|safe }}</p>
                 {% endif %}
                 {% if h_leave %}
-                    <h3>When to leave</h3>
-                    <p>{{ h_leave }}</p>
+                    <h3>Closing</h3>
+                    <p>{{ h_leave|safe }}</p>
                 {% endif %}
                 {% include 'include/cancel.html' %}
+
             </div>
-
-
         {% elif application.is_invited or application.is_last_reminder %}
             <div class="col-md-12">
                 <div class="alert alert-success ">Congrats! You have been officially invited to {{ h_name }}! Please
